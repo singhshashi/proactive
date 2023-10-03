@@ -1,4 +1,4 @@
-import React, { ReactEventHandler } from "react";
+import React from "react";
 import { clsx } from "clsx";
 import { Icon } from "../Icon/Icon";
 
@@ -16,7 +16,7 @@ export const Button: React.FC<ButtonProps> = ({
   const isPrimary = variant === "primary";
   const isDefault = variant === "default";
 
-  let classes = clsx({
+  const classes = clsx({
     "rounded-lg": true,
     "px-4": true,
     "py-[0.1rem]": true,
@@ -46,7 +46,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
   iconName,
   onClick,
 }) => {
-  let classes = clsx({
+  const classes = clsx({
     "rounded-lg": true,
     "px-4": true,
     "py-[0.1rem]": true,

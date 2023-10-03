@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Wizard, WizardProps } from "./Wizard";
+import { Wizard } from "./Wizard";
 import { Step1, Step2, Step3 } from "./SampleWizardSteps";
 
 const meta: Meta = {

@@ -10,7 +10,7 @@ export interface IconProps {
 export const Icon: React.FC<IconProps> = ({ name, dimension, color }) => {
   const componentName = name + "Icon";
   console.log(componentName);
-  const Icon = Icons[componentName];
+  const Icon = Icons[componentName as keyof typeof Icons];
   if (!Icon) {
     return <div className="text-red-500">??</div>;
   }

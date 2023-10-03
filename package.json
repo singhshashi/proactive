@@ -1,11 +1,14 @@
 {
   "name": "proactive",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.4.0",
   "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build-lib": "tsc -p tsconfig.lib.json",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "test": "pnpm run test-storybook",
     "preview": "vite preview",

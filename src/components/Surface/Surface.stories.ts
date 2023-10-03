@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Surface, SurfaceProps } from "./Surface";
+import { Surface } from "./Surface";
 
 const meta = {
   title: "Example/Surface",

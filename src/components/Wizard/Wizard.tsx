@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Button, IconButton } from "../Button/Button";
 import { clsx } from "clsx";
-import { Icon } from "../Icon/Icon";
 
 export interface WizardProps {
   children: React.ReactElement[];

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button, ButtonProps } from "./Button";
+import { Button } from "./Button";
 import { within, userEvent } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 
