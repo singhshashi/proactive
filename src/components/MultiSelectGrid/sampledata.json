@@ -1,0 +1,182 @@
+{
+  "response": [
+    {
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Visual Studio Code.png",
+      "name": "Visual Studio Code"
+    },
+    {
+      "name": "VLC",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//VLC.png"
+    },
+    {
+      "name": "SigmaOS",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//SigmaOS.png"
+    },
+    {
+      "name": "Figma",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Figma.png"
+    },
+    {
+      "name": "RescueTime",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//RescueTime.png"
+    },
+    {
+      "name": "mmhmm Studio",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//mmhmm Studio.png"
+    },
+    {
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Google Chrome.png",
+      "name": "Google Chrome"
+    },
+    {
+      "name": "Numbers",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Numbers.png"
+    },
+    {
+      "name": "Heptabase",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Heptabase.png"
+    },
+    {
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Telegram.png",
+      "name": "Telegram"
+    },
+    {
+      "name": "Xcode",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Xcode.png"
+    },
+    {
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Warp.png",
+      "name": "Warp"
+    },
+    {
+      "name": "Spotify",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Spotify.png"
+    },
+    {
+      "name": "iMovie",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//iMovie.png"
+    },
+    {
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Focus.png",
+      "name": "Focus"
+    },
+    {
+      "name": "Cursor",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Cursor.png"
+    },
+    {
+      "name": "Be Focused",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Be Focused.png"
+    },
+    {
+      "name": "Loom",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Loom.png"
+    },
+    {
+      "name": "Google Drive",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Google Drive.png"
+    },
+    {
+      "name": "FlutterFolio",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//FlutterFolio.png"
+    },
+    {
+      "name": "Docker",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Docker.png"
+    },
+    {
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Obsidian.png",
+      "name": "Obsidian"
+    },
+    {
+      "name": "Safari",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Safari.png"
+    },
+    {
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Kindle.png",
+      "name": "Kindle"
+    },
+    {
+      "name": "zoom.us",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//zoom.us.png"
+    },
+    {
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//WhatsApp.png",
+      "name": "WhatsApp"
+    },
+    {
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//GitHub Desktop.png",
+      "name": "GitHub Desktop"
+    },
+    {
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Howler Timer.png",
+      "name": "Howler Timer"
+    },
+    {
+      "name": "Keynote",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Keynote.png"
+    },
+    {
+      "name": "Google Docs",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Google Docs.png"
+    },
+    {
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Google Sheets.png",
+      "name": "Google Sheets"
+    },
+    {
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Pages.png",
+      "name": "Pages"
+    },
+    {
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//GarageBand.png",
+      "name": "GarageBand"
+    },
+    {
+      "name": "Google Slides",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Google Slides.png"
+    },
+    {
+      "name": "Microsoft Edge",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Microsoft Edge.png"
+    },
+    {
+      "name": "Microsoft OneNote",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Microsoft OneNote.png"
+    },
+    {
+      "name": "iTerm",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//iTerm.png"
+    },
+    {
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Developer.png",
+      "name": "Developer"
+    },
+    {
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Alfred 5.png",
+      "name": "Alfred 5"
+    },
+    {
+      "name": "Trici",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Trici.png"
+    },
+    {
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//OBS.png",
+      "name": "OBS"
+    },
+    {
+      "name": "Surfshark",
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Surfshark.png"
+    },
+    {
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Toggl Track.png",
+      "name": "Toggl Track"
+    },
+    {
+      "iconPath": "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T//Discord.png",
+      "name": "Discord"
+    }
+  ],
+  "timestamp": 1696314081.515552,
+  "type": "installedApps"
+}
