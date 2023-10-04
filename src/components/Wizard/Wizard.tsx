@@ -3,7 +3,7 @@ import { Button, IconButton } from "../Button/Button";
 import { clsx } from "clsx";
 
 export interface WizardProps {
-  children: React.ReactElement[];
+  children: React.ReactNode[];
   width: string;
   height: string;
   onFinish: () => void;
