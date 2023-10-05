@@ -16,6 +16,9 @@
     "build-storybook": "storybook build",
     "test-storybook": "test-storybook"
   },
+  "files": [
+    "lib"
+  ],
   "peerDependencies": {
     "@heroicons/react": "^2.0.18",
     "clsx": "^2.0.0",
