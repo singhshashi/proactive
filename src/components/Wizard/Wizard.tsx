@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Button, IconButton } from "../Button/Button";
 import { clsx } from "clsx";
 
@@ -19,6 +19,18 @@ export interface WizardButtonControlProps {
   onDone: () => void;
   useIconButtons?: boolean;
 }
+
+export const WizardContext = React.createContext({
+  setStepReady: (stepIndex: number, isReady: boolean) => {},
+});
+
+export const useWizard = () => {
+  const context = useContext(WizardContext);
+  if (context === null) {
+    throw new Error("useWizard must be used within a Wizard");
+  }
+  return context;
+};
 
 const WizardButtonControl: React.FC<WizardButtonControlProps> = ({
   showPreviousButton,
@@ -79,6 +91,7 @@ const WizardButtonControl: React.FC<WizardButtonControlProps> = ({
     </div>
   );
 };
+
 export const Wizard: React.FC<WizardProps> = ({
   children,
   width,
@@ -86,7 +99,29 @@ export const Wizard: React.FC<WizardProps> = ({
   onFinish,
   useIconButtons,
 }) => {
+  type StepsReadyType = {
+    [key: number]: boolean;
+  };
+
   const [currentStep, setCurrentStep] = useState(0);
+  const [stepsNotReady, setStepsNotReady] = useState<StepsReadyType>({});
+
+  const setStepReady = (stepIndex: number, isReady: boolean) => {
+    if (isReady) {
+      setStepsNotReady((prev) => {
+        const newStepsNotReady = { ...prev };
+        delete newStepsNotReady[stepIndex];
+        return newStepsNotReady;
+      });
+    } else {
+      setStepsNotReady((prev) => ({
+        ...prev,
+        [stepIndex]: true,
+      }));
+    }
+  };
+
+  const isCurrentStepReady = !stepsNotReady[currentStep];
 
   const styles = {
     width: `${width}`,
@@ -98,20 +133,24 @@ export const Wizard: React.FC<WizardProps> = ({
       className="flex flex-col items-center gap-1 justify-between"
       style={styles}
     >
-      <div className="w-full h-11/12 flex-grow">{children[currentStep]}</div>
-      <div className="bottom-1 w-full">
-        <WizardButtonControl
-          showPreviousButton={currentStep !== 0}
-          showNextButton={currentStep < children.length - 1}
-          showDoneButton={currentStep === children.length - 1}
-          onBack={() => setCurrentStep((prev) => Math.max(0, prev - 1))}
-          onNext={() =>
-            setCurrentStep((prev) => Math.min(children.length - 1, prev + 1))
-          }
-          onDone={onFinish}
-          useIconButtons={useIconButtons}
-        />
-      </div>
+      <WizardContext.Provider value={{ setStepReady }}>
+        <div className="w-full h-11/12 flex-grow">{children[currentStep]}</div>
+        <div className="bottom-1 w-full">
+          <WizardButtonControl
+            showPreviousButton={currentStep !== 0}
+            showNextButton={
+              currentStep < children.length - 1 && isCurrentStepReady
+            }
+            showDoneButton={currentStep === children.length - 1}
+            onBack={() => setCurrentStep((prev) => Math.max(0, prev - 1))}
+            onNext={() =>
+              setCurrentStep((prev) => Math.min(children.length - 1, prev + 1))
+            }
+            onDone={onFinish}
+            useIconButtons={useIconButtons}
+          />
+        </div>
+      </WizardContext.Provider>
     </div>
   );
 };
