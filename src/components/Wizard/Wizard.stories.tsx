@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Wizard, WizardContext } from "./Wizard";
+import { Wizard, useWizard } from "./Wizard";
 import { WizardStep } from "./WizardStep";
 import React, { useEffect } from "react";
 
@@ -39,7 +39,7 @@ const Step1 = () => {
 };
 
 const TermsAndConditionsStep: React.FC = () => {
-  const { setStepReady } = React.useContext(WizardContext);
+  const { setStepReady } = useWizard();
   const [isAgreed, setIsAgreed] = React.useState(false);
 
   useEffect(() => {
@@ -81,6 +81,9 @@ const Step3 = () => {
 };
 
 const wizardSteps = [<Step1 />, <Step2 />, <Step3 />];
+<div className="flex flex-col justify-around gap-2 h-full">
+  <div className="text-sm">Step 2</div>
+</div>;
 
 export const Default: Story = {
   args: {

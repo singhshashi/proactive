@@ -20,9 +20,17 @@ export interface WizardButtonControlProps {
   useIconButtons?: boolean;
 }
 
-export const WizardContext = React.createContext({
-  setStepReady: (stepIndex: number, isReady: boolean) => {},
-});
+export type WizardContextType = {
+  setStepReady: (stepIndex: number, isReady: boolean) => void;
+};
+
+const defaultWizardContextValue: WizardContextType = {
+  setStepReady: () => {},
+};
+
+export const WizardContext = React.createContext<WizardContextType>(
+  defaultWizardContextValue
+);
 
 export const useWizard = () => {
   const context = useContext(WizardContext);
