@@ -64,7 +64,7 @@ const TermsAndConditionsStep: React.FC = () => {
 };
 const Step2 = () => {
   return (
-    <WizardStep stepIndex={1}>
+    <WizardStep stepindex={1}>
       <TermsAndConditionsStep />
     </WizardStep>
   );
@@ -72,7 +72,7 @@ const Step2 = () => {
 
 const Step3 = () => {
   return (
-    <WizardStep stepIndex={2}>
+    <WizardStep stepindex={2}>
       <div className="flex flex-col justify-around gap-2 h-full">
         <div className="text-sm">Step 3</div>
       </div>

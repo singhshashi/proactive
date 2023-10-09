@@ -1,18 +1,18 @@
 import React from "react";
 
 export interface WizardStepProps {
-  stepIndex: number;
+  stepindex: number;
   children: React.ReactNode;
 }
 
 export const WizardStep: React.FC<WizardStepProps> = ({
-  stepIndex,
+  stepindex,
   children,
 }) => {
   const childrenWithProps = React.Children.map(children, (child) => {
     if (React.isValidElement(child)) {
       return React.cloneElement(child as React.ReactElement<any>, {
-        stepIndex: stepIndex,
+        stepindex: stepindex,
       });
     }
     return child;
