@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "build-lib": "tsc -p tsconfig.lib.json",
-    "prepare": "pnpm run build-lib",
+    "prepare": "pnpm run build-lib || echo `Prepare script failed`",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "test": "pnpm run test-storybook",
     "preview": "vite preview",

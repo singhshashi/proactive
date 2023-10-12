@@ -30,7 +30,7 @@ type Story = StoryObj<typeof meta>;
 
 const Step1 = () => {
   return (
-    <WizardStep stepIndex={0}>
+    <WizardStep stepindex={0}>
       <div className="flex flex-col justify-around gap-2 h-full">
         <div className="text-sm">Step 1</div>
       </div>

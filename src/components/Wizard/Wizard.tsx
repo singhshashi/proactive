@@ -22,10 +22,12 @@ export interface WizardButtonControlProps {
 
 export type WizardContextType = {
   setStepReady: (stepIndex: number, isReady: boolean) => void;
+  getStepReady: (stepIndex: number) => boolean;
 };
 
 const defaultWizardContextValue: WizardContextType = {
   setStepReady: () => {},
+  getStepReady: () => false,
 };
 
 export const WizardContext = React.createContext<WizardContextType>(
@@ -129,6 +131,10 @@ export const Wizard: React.FC<WizardProps> = ({
     }
   };
 
+  const getStepReady = (stepIndex: number) => {
+    return !stepsNotReady[stepIndex];
+  };
+
   const isCurrentStepReady = !stepsNotReady[currentStep];
 
   const styles = {
@@ -141,7 +147,7 @@ export const Wizard: React.FC<WizardProps> = ({
       className="flex flex-col items-center gap-1 justify-between"
       style={styles}
     >
-      <WizardContext.Provider value={{ setStepReady }}>
+      <WizardContext.Provider value={{ setStepReady, getStepReady }}>
         <div className="w-full h-11/12 flex-grow">{children[currentStep]}</div>
         <div className="bottom-1 w-full">
           <WizardButtonControl
