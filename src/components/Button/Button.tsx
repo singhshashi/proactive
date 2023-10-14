@@ -5,7 +5,7 @@ import { Icon } from "../Icon/Icon";
 export interface ButtonProps {
   children: React.ReactNode;
   variant: "primary" | "default";
-  size: "small" | "medium" | "large";
+  size?: "small" | "medium" | "large";
   onClick: (evt: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
