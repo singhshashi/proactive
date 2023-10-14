@@ -17,7 +17,7 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   const isPrimary = variant === "primary";
   const isDefault = variant === "default";
-  const isSmall = size === "small";
+  const isSmall = size === "small" || size === undefined;
   const isMedium = size === "medium";
   const isLarge = size === "large";
 
