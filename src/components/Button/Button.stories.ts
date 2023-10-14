@@ -27,6 +27,7 @@ export const Primary: Story = {
       const buttonElement = evt.target as HTMLButtonElement;
       buttonElement.textContent = "Clicked";
     },
+    size: "small",
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -39,9 +40,26 @@ export const Primary: Story = {
   },
 };
 
+export const PrimaryMedium: Story = {
+  args: {
+    children: "Done",
+    variant: "primary",
+    size: "medium",
+  },
+};
+
+export const PrimaryLarge: Story = {
+  args: {
+    children: "Done",
+    variant: "primary",
+    size: "large",
+  },
+};
+
 export const Default: Story = {
   args: {
     children: "Details...",
     variant: "default",
+    size: "small",
   },
 };
