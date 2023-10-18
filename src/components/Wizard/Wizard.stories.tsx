@@ -44,7 +44,7 @@ const TermsAndConditionsStep: React.FC = () => {
 
   useEffect(() => {
     setStepReady(1, isAgreed);
-  }, [isAgreed, setStepReady]);
+  }, [isAgreed]);
 
   return (
     <div>
@@ -90,6 +90,9 @@ export const Default: Story = {
     children: wizardSteps,
     width: "400px",
     height: "400px",
+    onStepChange: (stepIndex: number) => {
+      console.log(`Step changed to ${stepIndex}`);
+    },
     onFinish: () => {
       console.log("Wizard finished");
     },
@@ -101,6 +104,9 @@ export const WithIconButtons: Story = {
     children: wizardSteps,
     width: "400px",
     height: "400px",
+    onStepChange: (stepIndex: number) => {
+      console.log(`Step changed to ${stepIndex}`);
+    },
     onFinish: () => {
       console.log("Wizard finished");
     },
