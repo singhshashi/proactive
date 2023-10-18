@@ -39,9 +39,34 @@ export const Primary: Story = {
   },
 };
 
+export const PrimaryMedium: Story = {
+  args: {
+    children: "Done",
+    variant: "primary",
+    size: "medium",
+  },
+};
+
+export const DefaultMedium: Story = {
+  args: {
+    children: "Details...",
+    variant: "default",
+    size: "medium",
+  },
+};
+
+export const PrimaryLarge: Story = {
+  args: {
+    children: "Done",
+    variant: "primary",
+    size: "large",
+  },
+};
+
 export const Default: Story = {
   args: {
     children: "Details...",
     variant: "default",
+    size: "small",
   },
 };

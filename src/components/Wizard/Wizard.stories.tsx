@@ -30,7 +30,7 @@ type Story = StoryObj<typeof meta>;
 
 const Step1 = () => {
   return (
-    <WizardStep stepIndex={0}>
+    <WizardStep stepindex={0}>
       <div className="flex flex-col justify-around gap-2 h-full">
         <div className="text-sm">Step 1</div>
       </div>
@@ -44,7 +44,7 @@ const TermsAndConditionsStep: React.FC = () => {
 
   useEffect(() => {
     setStepReady(1, isAgreed);
-  }, [isAgreed, setStepReady]);
+  }, [isAgreed]);
 
   return (
     <div>
@@ -64,7 +64,7 @@ const TermsAndConditionsStep: React.FC = () => {
 };
 const Step2 = () => {
   return (
-    <WizardStep stepIndex={1}>
+    <WizardStep stepindex={1}>
       <TermsAndConditionsStep />
     </WizardStep>
   );
@@ -72,7 +72,7 @@ const Step2 = () => {
 
 const Step3 = () => {
   return (
-    <WizardStep stepIndex={2}>
+    <WizardStep stepindex={2}>
       <div className="flex flex-col justify-around gap-2 h-full">
         <div className="text-sm">Step 3</div>
       </div>
@@ -90,6 +90,9 @@ export const Default: Story = {
     children: wizardSteps,
     width: "400px",
     height: "400px",
+    onStepChange: (stepIndex: number) => {
+      console.log(`Step changed to ${stepIndex}`);
+    },
     onFinish: () => {
       console.log("Wizard finished");
     },
@@ -101,6 +104,9 @@ export const WithIconButtons: Story = {
     children: wizardSteps,
     width: "400px",
     height: "400px",
+    onStepChange: (stepIndex: number) => {
+      console.log(`Step changed to ${stepIndex}`);
+    },
     onFinish: () => {
       console.log("Wizard finished");
     },
