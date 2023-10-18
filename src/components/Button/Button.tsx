@@ -37,8 +37,17 @@ export const Button: React.FC<ButtonProps> = ({
     "bg-gray-50": isDefault,
     "hover:bg-gray-100": isDefault,
     "text-white": isPrimary,
-    "bg-blue-500": isPrimary,
-    "hover:bg-blue-600": isPrimary,
+    "bg-gradient-to-b": isPrimary,
+    "from-blue-500": isPrimary,
+    "to-blue-600": isPrimary,
+    // border: isPrimary,
+    // "border-blue-600": isPrimary,
+    "active:bg-gray-500": isPrimary,
+    "active:bg-blend-overlay": isPrimary,
+    "active:shadow-sm": isPrimary,
+    "active:text-gray-200": isPrimary,
+    transition: true,
+    "duration-200": true,
   });
 
   return (
