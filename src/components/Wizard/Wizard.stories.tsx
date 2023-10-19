@@ -99,6 +99,21 @@ export const Default: Story = {
   },
 };
 
+export const WithStartingStep: Story = {
+  args: {
+    children: wizardSteps,
+    width: "400px",
+    height: "400px",
+    startingStep: 1,
+    onStepChange: (stepIndex: number) => {
+      console.log(`Step changed to ${stepIndex}`);
+    },
+    onFinish: () => {
+      console.log("Wizard finished");
+    },
+  },
+};
+
 export const WithIconButtons: Story = {
   args: {
     children: wizardSteps,
