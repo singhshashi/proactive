@@ -8,6 +8,7 @@ export interface WizardProps {
   height: string;
   onFinish: () => void;
   onStepChange: (stepIndex: number) => void;
+  startingStep?: number;
   useIconButtons?: boolean;
 }
 
@@ -107,6 +108,7 @@ export const Wizard: React.FC<WizardProps> = ({
   children,
   width,
   height,
+  startingStep = 0,
   onFinish,
   onStepChange,
   useIconButtons,
@@ -115,7 +117,7 @@ export const Wizard: React.FC<WizardProps> = ({
     [key: number]: boolean;
   };
 
-  const [currentStep, setCurrentStep] = useState(0);
+  const [currentStep, setCurrentStep] = useState(startingStep);
   const [stepsNotReady, setStepsNotReady] = useState<StepsReadyType>({});
 
   const setStepReady = (stepIndex: number, isReady: boolean) => {
