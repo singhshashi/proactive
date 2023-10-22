@@ -39,5 +39,8 @@ export const Default: Story = {
         </div>
       );
     },
+    onSelectionChange: (selectedItems: Array<any>) => {
+      console.log(selectedItems);
+    },
   },
 };
