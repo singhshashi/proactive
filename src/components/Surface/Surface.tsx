@@ -19,9 +19,7 @@ export const Surface: React.FC<SurfaceProps> = ({
   const isDark = shade === "dark";
   const isLight = shade === "light";
 
-  let classes = clsx({
-    "px-4": true,
-    "py-2": true,
+  const classes = clsx({
     "bg-gradient-to-t": true,
     "from-gray-50": isLight,
     "to-gray-100": isLight,
