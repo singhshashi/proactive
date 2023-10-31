@@ -4,3 +4,4 @@ export * from "./components/MultiSelectGrid/MultiSelectGrid";
 export * from "./components/Surface/Surface";
 export * from "./components/Wizard/Wizard";
 export * from "./components/Wizard/WizardStep";
+export * from "./components/SideNav/SideNav";
