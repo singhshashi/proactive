@@ -11,11 +11,13 @@ export type NavItem = {
 export interface SideNavProps {
   items: Array<NavItem>;
   onSelectionChange: (selectedItem: NavItem) => void;
+  iconColor?: string;
 }
 
 export const SideNav: React.FC<SideNavProps> = ({
   items,
   onSelectionChange,
+  iconColor,
 }) => {
   return (
     <div className="flex flex-col h-full ">
@@ -24,14 +26,18 @@ export const SideNav: React.FC<SideNavProps> = ({
           item.isSelected ? "bg-blue-300 text-white rounded" : ""
         }`;
 
-        const iconColor = item.isSelected ? "#ffffff" : "#60a5fa";
+        const iconColorFinal = item.isSelected
+          ? "#ffffff"
+          : iconColor
+          ? iconColor
+          : "#71717a";
         return (
           <div
             className={classes}
             key={`item-${index}`}
             onClick={() => onSelectionChange(item)}
           >
-            <Icon name={item.icon} dimension="24" color={iconColor} />
+            <Icon name={item.icon} dimension="24" color={iconColorFinal} />
             <div className="text-sm">{item.label}</div>
           </div>
         );
