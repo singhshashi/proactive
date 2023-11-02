@@ -1,4 +1,3 @@
-import React from "react";
 // import * as Icons from "@heroicons/react/24/solid";
 import * as Icons from "react-bootstrap-icons";
 
