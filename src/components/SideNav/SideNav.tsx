@@ -40,7 +40,7 @@ export const SideNav: React.FC<SideNavProps> = ({
           >
             <Icon
               iconName={inferredIconName}
-              size="24"
+              size="20"
               color={iconColorFinal}
             />
             <div className="text-sm">{item.label}</div>
