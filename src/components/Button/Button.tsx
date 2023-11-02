@@ -1,6 +1,6 @@
 import React from "react";
 import { clsx } from "clsx";
-import { Icon } from "../Icon/Icon";
+import { Icon, IconName } from "../Icon/Icon";
 
 export interface ButtonProps {
   children: React.ReactNode;
@@ -58,12 +58,14 @@ export const Button: React.FC<ButtonProps> = ({
 };
 
 export interface IconButtonProps {
-  iconName: string;
+  iconName: IconName;
+  size?: number;
   onClick: (evt: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export const IconButton: React.FC<IconButtonProps> = ({
   iconName,
+  size = 36,
   onClick,
 }) => {
   const classes = clsx({
@@ -73,10 +75,9 @@ export const IconButton: React.FC<IconButtonProps> = ({
     "text-sm": true,
     "hover:bg-gray-50": true,
   });
-
   return (
     <button className={classes} onClick={onClick}>
-      <Icon name={iconName} dimension="24" />
+      <Icon iconName={iconName} size={size} />
     </button>
   );
 };

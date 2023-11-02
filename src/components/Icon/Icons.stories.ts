@@ -17,16 +17,16 @@ type Story = StoryObj<typeof meta>;
 
 export const Check: Story = {
   args: {
-    name: "Check",
-    dimension: "24",
+    iconName: "Check",
     color: "green",
+    size: 36,
   },
 };
 
-export const LightBulb: Story = {
+export const Stopwatch: Story = {
   args: {
-    name: "LightBulb",
-    dimension: "24",
-    color: "red",
+    iconName: "Stopwatch",
+    color: "#232323",
+    size: 36,
   },
 };

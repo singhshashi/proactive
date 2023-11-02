@@ -1,33 +1,25 @@
 import React from "react";
-import * as Icons from "@heroicons/react/24/solid";
+// import * as Icons from "@heroicons/react/24/solid";
+import * as Icons from "react-bootstrap-icons";
 
-export interface IconProps {
-  name: string;
-  dimension?: string;
-  color?: string;
+export type IconName = keyof typeof Icons;
+
+export interface IconProps extends Icons.IconProps {
+  iconName: IconName;
 }
 
-export const Icon: React.FC<IconProps> = ({ name, dimension, color }) => {
-  const componentName = name + "Icon";
-  console.log(componentName);
-  const Icon = Icons[componentName as keyof typeof Icons];
-  if (!Icon) {
+export const Icon = ({ iconName, ...props }: IconProps) => {
+  console.log("iconName", iconName);
+  console.log("props:", props);
+  const BootstrapIcon = Icons[iconName as keyof typeof Icons];
+  console.log("BootstrapIcon:", BootstrapIcon);
+  if (!BootstrapIcon) {
     return <div className="text-red-500">??</div>;
   }
 
-  if (dimension === undefined) {
-    dimension = "24";
-  }
-
-  const styles = {
-    width: `${dimension}px`,
-    height: `${dimension}px`,
-    color: `${color}`,
-  };
-
   return (
-    <div style={styles}>
-      <Icon />
-    </div>
+    <>
+      <BootstrapIcon {...props} />
+    </>
   );
 };

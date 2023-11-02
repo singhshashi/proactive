@@ -18,7 +18,7 @@ type Story = StoryObj<typeof meta>;
 const navItems = [
   {
     label: "Shortcuts",
-    icon: "Bolt",
+    icon: "Keyboard",
     isSelected: true,
     key: "Shortcuts",
   },
@@ -30,13 +30,13 @@ const navItems = [
   },
   {
     label: "Website Blocking",
-    icon: "NoSymbol",
+    icon: "XOctagonFill",
     isSelected: false,
     key: "websiteBlocking",
   },
   {
     label: "Focus Session",
-    icon: "VideoCamera",
+    icon: "RecordCircle",
     isSelected: false,
     key: "focusSession",
   },

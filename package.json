@@ -63,6 +63,7 @@
   },
   "dependencies": {
     "@fluentui/react-icons": "^2.0.221",
-    "@storybook/types": "^7.5.2"
+    "@storybook/types": "^7.5.2",
+    "react-bootstrap-icons": "^1.10.3"
   }
 }

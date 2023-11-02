@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon } from "../..";
+import { Icon, IconName } from "../Icon/Icon";
 
 export type NavItem = {
   key: string;
@@ -26,18 +26,23 @@ export const SideNav: React.FC<SideNavProps> = ({
           item.isSelected ? "bg-blue-300 text-white rounded" : ""
         }`;
 
+        const inferredIconName = item.icon as IconName;
         const iconColorFinal = item.isSelected
           ? "#ffffff"
           : iconColor
           ? iconColor
-          : "#71717a";
+          : "#41414a";
         return (
           <div
             className={classes}
             key={`item-${index}`}
             onClick={() => onSelectionChange(item)}
           >
-            <Icon name={item.icon} dimension="24" color={iconColorFinal} />
+            <Icon
+              iconName={inferredIconName}
+              size="28"
+              color={iconColorFinal}
+            />
             <div className="text-sm">{item.label}</div>
           </div>
         );
