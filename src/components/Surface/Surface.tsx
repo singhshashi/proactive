@@ -20,8 +20,8 @@ export const Surface: React.FC<SurfaceProps> = ({
   const isLight = shade === "light";
 
   const classes = clsx({
-    // "bg-gray-50": isLight,
-    // "bg-gray-200": isDark,
+    "bg-zinc-100": isLight,
+    "bg-zinc-200": isDark,
     "w-full": width === undefined,
     "h-full": height === undefined,
     "bg-opacity-50": type === "translucent",
@@ -29,14 +29,14 @@ export const Surface: React.FC<SurfaceProps> = ({
     "bg-opacity-25": type === "glossy",
   });
 
-  let bgColor = "#ffffff";
-  bgColor = isLight ? "#F5F1E9" : bgColor;
-  bgColor = isDark ? "#E7E3DB" : bgColor;
+  // let bgColor = "#ffffff";
+  // bgColor = isLight ? "#F5F1E9" : bgColor;
+  // bgColor = isDark ? "#E7E3DB" : bgColor;
 
   const styles = {
     width: `${width}`,
     height: `${height}`,
-    backgroundColor: `${bgColor}`,
+    // backgroundColor:`${bgColor}`
   };
 
   return (
