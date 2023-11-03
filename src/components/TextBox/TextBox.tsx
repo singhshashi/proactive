@@ -34,7 +34,7 @@ export const TextBox: React.FC<TextBoxProps> = ({
 
   const inputValueHasError = error && error !== "";
 
-  const inputClasses = `border rounded-lg px-1 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+  const inputClasses = `border rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
     inputValueHasError ? "border-red-300 border-1 ring-2" : ""
   }`;
 
