@@ -34,7 +34,7 @@ export const Button: React.FC<ButtonProps> = ({
     "text-lg": isLarge,
     "shadow-md": true,
     "text-black": isDefault,
-    "bg-gray-50": isDefault,
+    "bg-white": isDefault,
     "hover:bg-gray-100": isDefault,
     "text-white": isPrimary,
     "bg-gradient-to-b": isPrimary,

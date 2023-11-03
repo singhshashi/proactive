@@ -23,7 +23,9 @@ export const SideNav: React.FC<SideNavProps> = ({
     <div className="flex flex-col h-full ">
       {items.map((item: NavItem, index: number) => {
         const classes = `w-full px-2 py-2 flex items-center justify-start gap-5 ${
-          item.isSelected ? "bg-blue-300 text-white rounded" : ""
+          item.isSelected
+            ? " bg-gradient-to-t from-blue-300 to-blue-400 text-white rounded"
+            : ""
         }`;
 
         const inferredIconName = item.icon as IconName;
