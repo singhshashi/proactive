@@ -45,7 +45,7 @@ export const SideNav: React.FC<SideNavProps> = ({
               size="20"
               color={iconColorFinal}
             />
-            <div className="text-sm">{item.label}</div>
+            <div className="text-sm cursor-default">{item.label}</div>
           </div>
         );
       })}
