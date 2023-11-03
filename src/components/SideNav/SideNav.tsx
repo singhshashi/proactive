@@ -24,7 +24,7 @@ export const SideNav: React.FC<SideNavProps> = ({
       {items.map((item: NavItem, index: number) => {
         const classes = `w-full px-2 py-2 flex items-center justify-start gap-5 ${
           item.isSelected
-            ? " bg-gradient-to-t from-blue-300 to-blue-400 text-white rounded"
+            ? " bg-gradient-to-r from-blue-400 to-blue-400 text-white rounded"
             : ""
         }`;
 

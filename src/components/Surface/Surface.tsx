@@ -20,7 +20,7 @@ export const Surface: React.FC<SurfaceProps> = ({
   const isLight = shade === "light";
 
   const classes = clsx({
-    "bg-zinc-300": isLight,
+    "bg-neutral-100": isLight,
     "bg-zinc-200": isDark,
     "w-full": width === undefined,
     "h-full": height === undefined,
