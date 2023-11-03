@@ -8,10 +8,7 @@ export interface IconProps extends Icons.IconProps {
 }
 
 export const Icon = ({ iconName, ...props }: IconProps) => {
-  console.log("iconName", iconName);
-  console.log("props:", props);
   const BootstrapIcon = Icons[iconName as keyof typeof Icons];
-  console.log("BootstrapIcon:", BootstrapIcon);
   if (!BootstrapIcon) {
     return <div className="text-red-500">??</div>;
   }
