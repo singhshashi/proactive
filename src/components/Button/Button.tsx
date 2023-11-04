@@ -48,6 +48,7 @@ export const Button: React.FC<ButtonProps> = ({
     "active:bg-blend-overlay": isPrimary,
     "active:shadow-sm": isPrimary,
     "active:text-gray-200": isPrimary,
+    "disabled:opacity-50": disabled,
     transition: true,
     "duration-200": true,
   });
