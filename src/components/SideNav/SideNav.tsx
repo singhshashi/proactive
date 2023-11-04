@@ -20,9 +20,9 @@ export const SideNav: React.FC<SideNavProps> = ({
   iconColor,
 }) => {
   return (
-    <div className="flex flex-col h-full ">
+    <div className="flex flex-col h-full gap-1 ">
       {items.map((item: NavItem, index: number) => {
-        const classes = `w-full px-2 py-1 flex items-center justify-start gap-5 ${
+        const classes = `w-full px-2 py-1 flex items-center justify-start gap-4 ${
           item.isSelected
             ? " bg-gradient-to-r from-blue-400 to-blue-400 text-white rounded"
             : ""
