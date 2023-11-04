@@ -1,6 +1,6 @@
 {
   "name": "@singhshashi/proactive",
-  "version": "0.10.10",
+  "version": "0.10.11",
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
