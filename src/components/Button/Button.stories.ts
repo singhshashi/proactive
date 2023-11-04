@@ -25,7 +25,12 @@ export const Primary: Story = {
     variant: "primary",
     onClick: (evt: React.MouseEvent<HTMLButtonElement>) => {
       const buttonElement = evt.target as HTMLButtonElement;
-      buttonElement.textContent = "Clicked";
+      if (!buttonElement) return;
+      if (buttonElement.textContent === "Done") {
+        buttonElement.textContent = "Clicked";
+      } else {
+        buttonElement.textContent = "Done";
+      }
     },
   },
   play: async ({ canvasElement }) => {

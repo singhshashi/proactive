@@ -6,6 +6,7 @@ export interface ButtonProps {
   children: React.ReactNode;
   variant: "primary" | "default";
   size?: "small" | "medium" | "large";
+  disabled?: boolean;
   onClick: (evt: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
@@ -13,6 +14,7 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   variant,
   size,
+  disabled = false,
   onClick,
 }) => {
   const isPrimary = variant === "primary";
@@ -51,7 +53,7 @@ export const Button: React.FC<ButtonProps> = ({
   });
 
   return (
-    <button className={classes} onClick={onClick}>
+    <button className={classes} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   );
@@ -60,12 +62,14 @@ export const Button: React.FC<ButtonProps> = ({
 export interface IconButtonProps {
   iconName: IconName;
   size?: number;
+  disabled?: boolean;
   onClick: (evt: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export const IconButton: React.FC<IconButtonProps> = ({
   iconName,
   size = 36,
+  disabled = false,
   onClick,
 }) => {
   const classes = clsx({
@@ -76,7 +80,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
     "hover:bg-gray-50": true,
   });
   return (
-    <button className={classes} onClick={onClick}>
+    <button className={classes} onClick={onClick} disabled={disabled}>
       <Icon iconName={iconName} size={size} />
     </button>
   );
