@@ -6,3 +6,4 @@ export * from "./components/Wizard/Wizard";
 export * from "./components/Wizard/WizardStep";
 export * from "./components/SideNav/SideNav";
 export * from "./components/TextBox/TextBox";
+export * from "./components/DataGrid/DataGrid";
