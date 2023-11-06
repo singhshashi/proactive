@@ -14,7 +14,7 @@ export interface DataGridProps {
   footer?: () => React.ReactElement;
   onAddItemClick?: () => void;
   onRemoveItemClick?: () => void;
-  showAddRemoveButtons: boolean;
+  showAddRemoveButtons?: boolean;
 }
 export const DataGrid: React.FC<DataGridProps> = ({
   dataGridLabel,
@@ -34,7 +34,7 @@ export const DataGrid: React.FC<DataGridProps> = ({
     ? emptyGridMessage
     : "No items to display";
   return (
-    <div className="flex flex-col justify-normal gap-3">
+    <div className="flex flex-col justify-normal gap-2">
       <div className="px-1 font-bold">{dataGridLabel}</div>
       <div className="px-1 font-light text-zinc-500 text-xs">
         {dataGridDescription}
@@ -44,9 +44,7 @@ export const DataGrid: React.FC<DataGridProps> = ({
         <div className="min-h-[100px]">
           {items &&
             items.map((item: any, index: number) => {
-              const classes = `w-full flex items-center justify-start gap-4 ${
-                index % 2 === 0 ? "bg-zinc-50" : ""
-              } `;
+              const classes = `w-full ${index % 2 === 0 ? "bg-zinc-50" : ""} `;
               return (
                 <div
                   className={classes}
