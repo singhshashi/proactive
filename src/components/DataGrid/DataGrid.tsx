@@ -6,10 +6,12 @@ import { Icon } from "../Icon/Icon";
 export interface DataGridProps {
   dataGridLabel?: string;
   dataGridDescription?: string;
+  header?: () => React.ReactElement;
   items: Array<any>;
   itemTemplate?: (item: any, index: number) => React.ReactElement;
   onItemSelectionChange?: (selectedItem: any) => void;
   emptyGridMessage?: string;
+  footer?: () => React.ReactElement;
   onAddItemClick?: () => void;
   onRemoveItemClick?: () => void;
   showAddRemoveButtons: boolean;
@@ -17,10 +19,12 @@ export interface DataGridProps {
 export const DataGrid: React.FC<DataGridProps> = ({
   dataGridLabel,
   dataGridDescription,
+  header,
   items,
   itemTemplate,
   onItemSelectionChange,
   emptyGridMessage,
+  footer,
   onAddItemClick,
   onRemoveItemClick,
   showAddRemoveButtons = true,
@@ -36,7 +40,7 @@ export const DataGrid: React.FC<DataGridProps> = ({
         {dataGridDescription}
       </div>
       <div className="border rounded-md border-zinc-200 ">
-        <div className="bg-zinc-100 px-2 py-1">Header</div>
+        <div className="bg-zinc-100 px-2 py-1">{header && header()}</div>
         <div className="min-h-[100px]">
           {items &&
             items.map((item: any, index: number) => {
@@ -62,7 +66,8 @@ export const DataGrid: React.FC<DataGridProps> = ({
           )}
         </div>
         <div className="bg-zinc-100 px-2 py-1">
-          {showAddRemoveButtons && (
+          {footer && footer()}
+          {!footer && showAddRemoveButtons && (
             <div className="flex flex-row justify-start items-center gap-1">
               <Icon
                 iconName="Plus"

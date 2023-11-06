@@ -56,6 +56,13 @@ export const SimpleDataGrid: Story = {
     dataGridLabel: "DataGrid Label",
     dataGridDescription:
       "DataGrid Description. The quick brown fox jumps over the lazy dog.",
+    header: () => {
+      return (
+        <div className="flex flex-row  px-2 py-1 justify-start items-center gap-1">
+          <div className="text-sm cursor-default">Application</div>
+        </div>
+      );
+    },
     items: sampleItems,
     itemTemplate: (item: any, index: number) => {
       return (
@@ -64,6 +71,12 @@ export const SimpleDataGrid: Story = {
         </div>
       );
     },
-    showAddRemoveButtons: true,
+    footer: () => {
+      return (
+        <div className="flex flex-row  px-2 py-1 justify-start items-center gap-1">
+          <div className="text-sm cursor-default">Footer</div>
+        </div>
+      );
+    },
   },
 };
