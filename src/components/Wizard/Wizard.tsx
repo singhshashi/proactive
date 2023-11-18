@@ -152,9 +152,7 @@ export const Wizard: React.FC<WizardProps> = ({
       style={styles}
     >
       <WizardContext.Provider value={{ setStepReady, getStepReady }}>
-        <div className="w-full h-11/12 flex-grow z-20">
-          {children[currentStep]}
-        </div>
+        <div className="w-full h-11/12 flex-grow ">{children[currentStep]}</div>
         <div className="bottom-1 w-full">
           <WizardButtonControl
             showPreviousButton={currentStep !== 0}
