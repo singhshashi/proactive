@@ -1,8 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { MultiSelectGrid } from "./MultiSelectGrid";
+import { MultiSelectGrid, MultiSelectGridProps } from "./MultiSelectGrid";
 import sampledata from "./sampledata.json";
 
-const meta = {
+type SampleDataType = {
+  iconPath: string;
+  name: string;
+};
+
+const meta: Meta<MultiSelectGridProps<SampleDataType>> = {
   title: "Example/MultiSelectGrid",
   component: MultiSelectGrid,
   parameters: {
@@ -10,7 +15,7 @@ const meta = {
   },
   argTypes: {},
   tags: ["autodocs"],
-} satisfies Meta<typeof MultiSelectGrid>;
+} satisfies Meta<typeof MultiSelectGrid<SampleDataType>>;
 
 export default meta;
 
@@ -20,8 +25,8 @@ console.log(sampledata);
 
 export const Default: Story = {
   args: {
-    data: sampledata.response,
-    itemTemplate: (item: any) => {
+    data: sampledata.response as SampleDataType[],
+    itemTemplate: (item) => {
       const correctedIconPath = item.iconPath.replace(
         "/var/folders/pz/rldnky716vjg7yvy6rvbd3980000gn/T/",
         "/sampleIcons/"
@@ -39,7 +44,7 @@ export const Default: Story = {
         </div>
       );
     },
-    onSelectionChange: (selectedItems: Array<any>) => {
+    onSelectionChange: (selectedItems: Array<SampleDataType>) => {
       console.log(selectedItems);
     },
   },

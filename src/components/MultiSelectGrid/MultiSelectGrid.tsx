@@ -1,17 +1,14 @@
 import React, { useEffect } from "react";
 
-export interface MultiSelectGridProps {
-  data: Array<any>;
-  itemTemplate: (item: any) => React.ReactElement;
-  onSelectionChange?: (selectedItems: Array<any>) => void;
+export interface MultiSelectGridProps<T> {
+  data: Array<T>;
+  itemTemplate: (item: T) => React.ReactElement;
+  onSelectionChange?: (selectedItems: Array<T>) => void;
 }
 
-export const MultiSelectGrid: React.FC<MultiSelectGridProps> = ({
-  data,
-  itemTemplate,
-  onSelectionChange,
-}) => {
-  const [selectedItems, setSelectedItems] = React.useState<Array<any>>([]);
+export const MultiSelectGrid = <T,>(props: MultiSelectGridProps<T>) => {
+  const { onSelectionChange, itemTemplate, data } = props;
+  const [selectedItems, setSelectedItems] = React.useState<Array<T>>([]);
 
   useEffect(() => {
     onSelectionChange && onSelectionChange(selectedItems);
@@ -19,7 +16,7 @@ export const MultiSelectGrid: React.FC<MultiSelectGridProps> = ({
 
   return (
     <div className="flex flex-wrap w-full">
-      {data.map((item: any, index: number) => {
+      {data.map((item, index) => {
         const isSelected = selectedItems.includes(item);
         const classes = `w-24 h-24 rounded-lg text-center ${
           isSelected
