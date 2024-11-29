@@ -15,6 +15,7 @@ export interface DataGridProps {
   onAddItemClick?: () => void;
   onRemoveItemClick?: () => void;
   showAddRemoveButtons?: boolean;
+  maxHeight?: string;
 }
 export const DataGrid: React.FC<DataGridProps> = ({
   dataGridLabel,
@@ -28,6 +29,7 @@ export const DataGrid: React.FC<DataGridProps> = ({
   onAddItemClick,
   onRemoveItemClick,
   showAddRemoveButtons = true,
+  maxHeight = "400px",
 }) => {
   const displayEmtpyState = (items && items.length === 0) || !items;
   emptyGridMessage = emptyGridMessage
@@ -41,7 +43,7 @@ export const DataGrid: React.FC<DataGridProps> = ({
       </div>
       <div className="border rounded-md border-zinc-200 ">
         <div className="bg-zinc-100 px-2 py-1">{header && header()}</div>
-        <div className="min-h-[100px]">
+        <div className="min-h-[100px] overflow-y-auto" style={{ maxHeight }}>
           {items &&
             items.map((item: any, index: number) => {
               const classes = `w-full ${index % 2 === 0 ? "bg-zinc-50" : ""} `;
