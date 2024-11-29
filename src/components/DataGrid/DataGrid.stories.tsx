@@ -85,3 +85,32 @@ export const SimpleDataGrid: Story = {
     },
   },
 };
+
+export const DataGridWithFooterAddRemoveButtons: Story = {
+  args: {
+    dataGridLabel: "DataGrid Label",
+    dataGridDescription:
+      "DataGrid Description. The quick brown fox jumps over the lazy dog.",
+    showAddRemoveButtons: true,
+    header: () => {
+      return (
+        <div className="flex flex-row  px-2 py-1 justify-start items-center gap-1">
+          <div className="text-sm cursor-default">Application</div>
+        </div>
+      );
+    },
+    items: sampleItems,
+    itemTemplate: (item: any, index: number) => {
+      return (
+        <div className="flex flex-row  px-2 py-1 justify-between items-center gap-1">
+          <div className="flex flex-row items-center justify-start">
+            <div className="text-sm cursor-default">{item.applicationName}</div>
+          </div>
+          <div className="flex flex-row items-center justify-end">
+            <div className="text-sm cursor-default">{item.durationUsed}</div>
+          </div>
+        </div>
+      );
+    },
+  },
+};
