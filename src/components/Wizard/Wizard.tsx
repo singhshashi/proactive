@@ -68,10 +68,10 @@ const WizardButtonControl: React.FC<WizardButtonControlProps> = ({
     prevNextButtonPartial = (
       <>
         {showPreviousButton && (
-          <IconButton iconName="ArrowLeft" onClick={onBack} />
+          <IconButton iconName="ArrowLeft" label="Back" onClick={onBack} />
         )}
         {showNextButton && (
-          <IconButton iconName="ArrowRight" onClick={onNext} />
+          <IconButton iconName="ArrowRight" label="Next" onClick={onNext} />
         )}
       </>
     );
@@ -152,8 +152,8 @@ export const Wizard: React.FC<WizardProps> = ({
       style={styles}
     >
       <WizardContext.Provider value={{ setStepReady, getStepReady }}>
-        <div className="w-full h-11/12 flex-grow ">{children[currentStep]}</div>
-        <div className="bottom-1 w-full">
+        <div className="w-full h-11/12 flex-grow " data-stepindex={currentStep}>{children[currentStep]}</div>
+        <div className="bottom-1 w-full min-h-10">
           <WizardButtonControl
             showPreviousButton={currentStep !== 0}
             showNextButton={

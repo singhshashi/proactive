@@ -62,6 +62,7 @@ export const Button: React.FC<ButtonProps> = ({
 
 export interface IconButtonProps {
   iconName: IconName;
+  label?: string;
   size?: number;
   disabled?: boolean;
   onClick: (evt: React.MouseEvent<HTMLButtonElement>) => void;
@@ -69,6 +70,7 @@ export interface IconButtonProps {
 
 export const IconButton: React.FC<IconButtonProps> = ({
   iconName,
+  label,
   size = 36,
   disabled = false,
   onClick,
@@ -81,7 +83,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
     "hover:bg-gray-50": true,
   });
   return (
-    <button className={classes} onClick={onClick} disabled={disabled}>
+    <button className={classes} onClick={onClick} disabled={disabled} aria-label={label ?? iconName}>
       <Icon iconName={iconName} size={size} />
     </button>
   );
