@@ -77,7 +77,7 @@ export const DataGrid: React.FC<DataGridProps> = ({
               />
               <div className="text-zinc-200 inline">|</div>
               <Icon
-                iconName="Dash"
+                iconName="Minus"
                 size="20"
                 color="#000000"
                 onClick={onRemoveItemClick}

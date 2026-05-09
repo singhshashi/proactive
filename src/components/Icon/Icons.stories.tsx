@@ -23,9 +23,9 @@ export const Check: Story = {
   },
 };
 
-export const Stopwatch: Story = {
+export const Timer: Story = {
   args: {
-    iconName: "Stopwatch",
+    iconName: "Timer",
     color: "#232323",
     size: 36,
   },

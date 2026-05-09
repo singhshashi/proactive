@@ -1,21 +1,17 @@
-// import * as Icons from "@heroicons/react/24/solid";
-import * as Icons from "react-bootstrap-icons";
+import * as Icons from "lucide-react";
+import type { LucideProps } from "lucide-react";
 
 export type IconName = keyof typeof Icons;
 
-export interface IconProps extends Icons.IconProps {
+export interface IconProps extends LucideProps {
   iconName: IconName;
 }
 
 export const Icon = ({ iconName, ...props }: IconProps) => {
-  const BootstrapIcon = Icons[iconName as keyof typeof Icons];
-  if (!BootstrapIcon) {
+  const LucideIcon = Icons[iconName] as React.ComponentType<LucideProps> | undefined;
+  if (!LucideIcon) {
     return <div className="text-red-500">??</div>;
   }
 
-  return (
-    <>
-      <BootstrapIcon {...props} />
-    </>
-  );
+  return <LucideIcon {...props} />;
 };
