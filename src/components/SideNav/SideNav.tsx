@@ -1,10 +1,11 @@
 import React from "react";
 import { Icon, IconName } from "../Icon/Icon";
+import { useProactiveTheme } from "../../theme/useProactiveTheme";
 
 export type NavItem = {
   key: string;
   label: string;
-  icon: string;
+  icon: IconName;
   isSelected: boolean;
 };
 
@@ -19,24 +20,33 @@ export const SideNav: React.FC<SideNavProps> = ({
   onSelectionChange,
   iconColor,
 }) => {
+  const theme = useProactiveTheme();
   return (
     <div className="flex flex-col h-full gap-1 ">
       {items.map((item: NavItem, index: number) => {
         const classes = `w-full px-2 py-1 flex items-center justify-start gap-4 ${
-          item.isSelected
-            ? " bg-gradient-to-r from-blue-400 to-blue-400 text-white rounded"
-            : ""
+          item.isSelected ? "rounded" : ""
         }`;
+
+        const styles: React.CSSProperties = item.isSelected
+          ? {
+              backgroundImage: `linear-gradient(to right, ${theme.sideNav.selectedGradientFrom}, ${theme.sideNav.selectedGradientTo})`,
+              color: theme.sideNav.selectedText,
+            }
+          : {
+              color: theme.text.primary,
+            };
 
         const inferredIconName = item.icon as IconName;
         const iconColorFinal = item.isSelected
-          ? "#ffffff"
+          ? theme.sideNav.selectedText
           : iconColor
           ? iconColor
-          : "#41414a";
+          : theme.sideNav.iconDefault;
         return (
           <div
             className={classes}
+            style={styles}
             key={`item-${index}`}
             onClick={() => onSelectionChange(item)}
           >

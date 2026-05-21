@@ -1,5 +1,6 @@
 import React from "react";
 import { clsx } from "clsx";
+import { useProactiveTheme } from "../../theme/useProactiveTheme";
 
 export interface SurfaceProps {
   children: React.ReactNode;
@@ -16,17 +17,12 @@ export const Surface: React.FC<SurfaceProps> = ({
   width,
   height,
 }) => {
-  const isDark = shade === "dark";
+  const theme = useProactiveTheme();
   const isLight = shade === "light";
 
   const classes = clsx({
-    "bg-neutral-100": isLight,
-    "bg-zinc-200": isDark,
     "w-full": width === undefined,
     "h-full": height === undefined,
-    "bg-opacity-50": type === "translucent",
-    "bg-opacity-100": type === "solid" || type === undefined,
-    "bg-opacity-25": type === "glossy",
   });
 
   // let bgColor = "#ffffff";
@@ -36,7 +32,9 @@ export const Surface: React.FC<SurfaceProps> = ({
   const styles = {
     width: `${width}`,
     height: `${height}`,
-    // backgroundColor:`${bgColor}`
+    backgroundColor: isLight ? theme.surface.light : theme.surface.dark,
+    opacity:
+      type === "translucent" ? 0.5 : type === "glossy" ? 0.25 : 1,
   };
 
   return (

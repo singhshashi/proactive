@@ -1,27 +1,45 @@
-# React + TypeScript + Vite
+# @singhshashi/proactive
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React component library for desktop UI, built with TypeScript and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```bash
+pnpm storybook
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Build
+
+```bash
+pnpm run build-lib
+```
+
+## Theming
+
+The library ships with a default macOS-style theme. To customize it, wrap your app with `ThemeProvider` and pass partial theme overrides.
+
+```tsx
+import { Button, ThemeProvider } from "@singhshashi/proactive";
+
+export function App() {
+  return (
+    <ThemeProvider
+      theme={{
+        button: {
+          primary: {
+            gradientFrom: "#14b8a6",
+            gradientTo: "#0f766e",
+            text: "#ecfeff",
+          },
+        },
+      }}
+    >
+      <Button variant="primary" onClick={() => {}}>
+        Done
+      </Button>
+    </ThemeProvider>
+  );
+}
+```
+
+If no `ThemeProvider` is used, components render with the default built-in theme.

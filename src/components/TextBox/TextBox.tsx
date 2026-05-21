@@ -1,4 +1,5 @@
 import React from "react";
+import { useProactiveTheme } from "../../theme/useProactiveTheme";
 
 type TextBoxProps = {
   value: string;
@@ -17,6 +18,7 @@ export const TextBox: React.FC<TextBoxProps> = ({
   placeholder,
   error,
 }) => {
+  const theme = useProactiveTheme();
   const [inputValue, setInputValue] = React.useState<string>(value);
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
@@ -28,19 +30,21 @@ export const TextBox: React.FC<TextBoxProps> = ({
     }
   };
 
-  const innerBoxShadowStyle = {
-    boxShadow: "inset 0 0 0 1px #eeeeee",
-  };
-
   const inputValueHasError = error && error !== "";
 
-  const inputClasses = `border rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-    inputValueHasError ? "border-red-300 border-1 ring-2" : ""
+  const innerBoxShadowStyle: React.CSSProperties = {
+    boxShadow: `inset 0 0 0 1px ${theme.textBox.insetBorder}`,
+    borderColor: inputValueHasError ? theme.textBox.errorBorder : theme.textBox.border,
+    ["--proactive-textbox-focus-ring" as string]: theme.textBox.focusRing,
+  };
+
+  const inputClasses = `border rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-[var(--proactive-textbox-focus-ring)] ${
+    inputValueHasError ? "border-1 ring-2" : ""
   }`;
 
   return (
     <div className="flex flex-col gap-1">
-      {label && <label className="text-sm">{label}</label>}
+      {label && <label className="text-sm" style={{ color: theme.text.primary }}>{label}</label>}
       <input
         className={inputClasses}
         style={innerBoxShadowStyle}
@@ -51,7 +55,7 @@ export const TextBox: React.FC<TextBoxProps> = ({
         placeholder={placeholder}
       />
       {inputValueHasError && (
-        <div className="text-red-300 text-sm">{error}</div>
+        <div className="text-sm" style={{ color: theme.text.error }}>{error}</div>
       )}
     </div>
   );

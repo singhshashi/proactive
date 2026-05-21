@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@fluentui/react-icons':
-        specifier: ^2.0.221
-        version: 2.0.326(react@18.3.1)
       lucide-react:
         specifier: ^0.511.0
         version: 0.511.0(react@18.3.1)
@@ -289,9 +286,6 @@ packages:
 
   '@emnapi/wasi-threads@1.2.1':
     resolution: {integrity: sha512-uTII7OYF+/Mes/MrcIOYp5yOtSMLBWSIoLPpcgwipoiKbli6k322tcoFsxoIIxPDqW01SQGAgko4EzZi2BNv2w==}
-
-  '@emotion/hash@0.9.2':
-    resolution: {integrity: sha512-MyqliTZGuOm3+5ZRSaaBGP3USLw6+EGykkwZns2EPC5g8jJ4z9OrdZY9apkl3+UP9+sdz76YYkwCKP5gh8iY3g==}
 
   '@esbuild/aix-ppc64@0.27.7':
     resolution: {integrity: sha512-EKX3Qwmhz1eMdEJokhALr0YiD0lhQNwDqkPYyPhiSwKrh7/4KRjQc04sZ8db+5DVVnZ1LmbNDI1uAMPEUBnQPg==}
@@ -622,22 +616,6 @@ packages:
   '@eslint/js@8.57.1':
     resolution: {integrity: sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-
-  '@fluentui/react-icons@2.0.326':
-    resolution: {integrity: sha512-iSN6YggrrQyZ46Jxk998Umm9jehWs6mrqCsrAvr7+uZWY6IwfYcoz94NCJ2SDiMO8Jompl4Y4Yu73SwljuUULQ==}
-    peerDependencies:
-      react: '>=16.8.0 <20.0.0'
-
-  '@griffel/core@1.21.0':
-    resolution: {integrity: sha512-QqMoewiNTT0DmLM7OY607c7yhg18SuKfzovTO3hPXGQvtdu/StnjvuBAs+1B1kYSVGReAo6s/dJVeLnPuHjE7Q==}
-
-  '@griffel/react@1.7.2':
-    resolution: {integrity: sha512-/+N+81e9ibNsh2wNlhGf2PcimEFrx8VbtWiLCmI6lsrTV5eBcQrIIDVQq737KPIJFtD4v6Txu9n0PXbN3hedNg==}
-    peerDependencies:
-      react: '>=16.14.0 <20.0.0'
-
-  '@griffel/style-types@1.4.0':
-    resolution: {integrity: sha512-vNDfOGV7RN/XkA7vxgf7Z5HgW8eiBm5cHT9wQPhsKB4pxWom5u6eQ9CkYE5mCCTSPl9H6Nd1NBai04d4P6BD7Q==}
 
   '@hapi/address@5.1.1':
     resolution: {integrity: sha512-A+po2d/dVoY7cYajycYI43ZbYMXukuopIsqCjh5QzsBCipDtdofHntljDlpccMjIfTy6UOkg+5KPriwYch2bXA==}
@@ -3642,9 +3620,6 @@ packages:
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
 
-  rtl-css-js@1.16.1:
-    resolution: {integrity: sha512-lRQgou1mu19e+Ya0LsTvKrVJ5TYUbqCVPAiImX3UfLTenarvPUl1QFdvu5Z3PYmHT9RCcwIfbjRQBntExyj3Zg==}
-
   run-applescript@7.1.0:
     resolution: {integrity: sha512-DPe5pVFaAsinSaV6QjQ6gdiedWDcRCbUuiQfQa2wmWV7+xC9bGulGI8+TdRmoFkAPaBXk8CrAbnlY2ISniJ47Q==}
     engines: {node: '>=18'}
@@ -3812,9 +3787,6 @@ packages:
   strip-json-comments@3.1.1:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
-
-  stylis@4.4.0:
-    resolution: {integrity: sha512-5Z9ZpRzfuH6l/UAvCPAPUo3665Nk2wLaZU3x+TLHKVzIz33+sbJqbtrYoC3KD4/uVOr2Zp+L0LySezP9OHV9yA==}
 
   sucrase@3.35.1:
     resolution: {integrity: sha512-DhuTmvZWux4H1UOnWMB3sk0sbaCVOoQZjv8u1rDoTV0HTdGem9hkAZtl4JZy8P2z4Bg0nT+YMeOFyVr4zcG5Tw==}
@@ -4421,8 +4393,6 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
-  '@emotion/hash@0.9.2': {}
-
   '@esbuild/aix-ppc64@0.27.7':
     optional: true
 
@@ -4601,31 +4571,6 @@ snapshots:
       - supports-color
 
   '@eslint/js@8.57.1': {}
-
-  '@fluentui/react-icons@2.0.326(react@18.3.1)':
-    dependencies:
-      '@griffel/react': 1.7.2(react@18.3.1)
-      react: 18.3.1
-      tslib: 2.8.1
-
-  '@griffel/core@1.21.0':
-    dependencies:
-      '@emotion/hash': 0.9.2
-      '@griffel/style-types': 1.4.0
-      csstype: 3.2.3
-      rtl-css-js: 1.16.1
-      stylis: 4.4.0
-      tslib: 2.8.1
-
-  '@griffel/react@1.7.2(react@18.3.1)':
-    dependencies:
-      '@griffel/core': 1.21.0
-      react: 18.3.1
-      tslib: 2.8.1
-
-  '@griffel/style-types@1.4.0':
-    dependencies:
-      csstype: 3.2.3
 
   '@hapi/address@5.1.1':
     dependencies:
@@ -7961,10 +7906,6 @@ snapshots:
       fsevents: 2.3.3
     optional: true
 
-  rtl-css-js@1.16.1:
-    dependencies:
-      '@babel/runtime': 7.29.2
-
   run-applescript@7.1.0: {}
 
   run-parallel@1.2.0:
@@ -8147,8 +8088,6 @@ snapshots:
   strip-indent@4.1.1: {}
 
   strip-json-comments@3.1.1: {}
-
-  stylis@4.4.0: {}
 
   sucrase@3.35.1:
     dependencies:

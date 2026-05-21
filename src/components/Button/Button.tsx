@@ -1,6 +1,7 @@
 import React from "react";
 import { clsx } from "clsx";
 import { Icon, IconName } from "../Icon/Icon";
+import { useProactiveTheme } from "../../theme/useProactiveTheme";
 
 export interface ButtonProps {
   children: React.ReactNode;
@@ -17,8 +18,8 @@ export const Button: React.FC<ButtonProps> = ({
   disabled = false,
   onClick,
 }) => {
+  const theme = useProactiveTheme();
   const isPrimary = variant === "primary";
-  const isDefault = variant === "default";
   const isSmall = size === "small" || size === undefined;
   const isMedium = size === "medium";
   const isLarge = size === "large";
@@ -35,26 +36,26 @@ export const Button: React.FC<ButtonProps> = ({
     "text-base": isMedium,
     "text-lg": isLarge,
     "shadow-md": true,
-    "text-black": isDefault,
-    "bg-white": isDefault,
-    "hover:bg-gray-100": isDefault,
-    "text-white": isPrimary,
-    "bg-gradient-to-b": isPrimary,
-    "from-blue-500": isPrimary,
-    "to-blue-600": isPrimary,
-    // border: isPrimary,
-    // "border-blue-600": isPrimary,
-    "active:bg-gray-500": isPrimary,
-    "active:bg-blend-overlay": isPrimary,
+    "hover:brightness-95": true,
+    "active:brightness-90": true,
     "active:shadow-sm": isPrimary,
-    "active:text-gray-200": isPrimary,
     "disabled:opacity-50": disabled,
     transition: true,
     "duration-200": true,
   });
 
+  const style: React.CSSProperties = isPrimary
+    ? {
+        color: theme.button.primary.text,
+        backgroundImage: `linear-gradient(to bottom, ${theme.button.primary.gradientFrom}, ${theme.button.primary.gradientTo})`,
+      }
+    : {
+        color: theme.button.default.text,
+        backgroundColor: theme.button.default.background,
+      };
+
   return (
-    <button className={classes} onClick={onClick} disabled={disabled}>
+    <button className={classes} style={style} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   );
@@ -75,15 +76,24 @@ export const IconButton: React.FC<IconButtonProps> = ({
   disabled = false,
   onClick,
 }) => {
+  const theme = useProactiveTheme();
   const classes = clsx({
     "rounded-lg": true,
     "px-4": true,
     "py-[0.1rem]": true,
     "text-sm": true,
     "hover:bg-gray-50": true,
+    transition: true,
+    "duration-200": true,
   });
   return (
-    <button className={classes} onClick={onClick} disabled={disabled} aria-label={label ?? iconName}>
+    <button
+      className={classes}
+      style={{ backgroundColor: theme.button.iconButton.background }}
+      onClick={onClick}
+      disabled={disabled}
+      aria-label={label ?? iconName}
+    >
       <Icon iconName={iconName} size={size} />
     </button>
   );

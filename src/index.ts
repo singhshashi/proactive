@@ -7,3 +7,6 @@ export * from "./components/Wizard/WizardStep";
 export * from "./components/SideNav/SideNav";
 export * from "./components/TextBox/TextBox";
 export * from "./components/DataGrid/DataGrid";
+export * from "./theme/ThemeProvider";
+export * from "./theme/useProactiveTheme";
+export * from "./theme/theme";

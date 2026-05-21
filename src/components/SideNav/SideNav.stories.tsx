@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { SideNav } from "./SideNav";
+import type { NavItem } from "./SideNav";
 
 const meta = {
   title: "Example/SideNav",
@@ -30,13 +31,13 @@ const navItems = [
   },
   {
     label: "Website Blocking",
-    icon: "XOctagonFill",
+    icon: "CircleX",
     isSelected: false,
     key: "websiteBlocking",
   },
   {
     label: "Focus Session",
-    icon: "RecordCircle",
+    icon: "Circle",
     isSelected: false,
     key: "focusSession",
   },
@@ -44,7 +45,7 @@ const navItems = [
 export const Default: Story = {
   args: {
     items: navItems,
-    onSelectionChange: (selectedItem: any) => {
+    onSelectionChange: (selectedItem: NavItem) => {
       navItems.forEach((item) => {
         item.isSelected = false;
         if (item.key === selectedItem.key) {

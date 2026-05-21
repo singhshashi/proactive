@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useProactiveTheme } from "../../theme/useProactiveTheme";
 
 export interface MultiSelectGridProps<T> {
   data: Array<T>;
@@ -7,6 +8,7 @@ export interface MultiSelectGridProps<T> {
 }
 
 export const MultiSelectGrid = <T,>(props: MultiSelectGridProps<T>) => {
+  const theme = useProactiveTheme();
   const { onSelectionChange, itemTemplate, data } = props;
   const [selectedItems, setSelectedItems] = React.useState<Array<T>>([]);
 
@@ -18,15 +20,23 @@ export const MultiSelectGrid = <T,>(props: MultiSelectGridProps<T>) => {
     <div className="flex flex-wrap w-full">
       {data.map((item, index) => {
         const isSelected = selectedItems.includes(item);
-        const classes = `w-24 h-24 rounded-lg text-center ${
-          isSelected
-            ? "bg-gray-200 border-gray-400 border-2 "
-            : "bg-transparent"
+        const classes = `w-24 h-24 rounded-lg text-center border-2 ${
+          isSelected ? "" : "border-transparent"
         }`;
+        const style: React.CSSProperties = isSelected
+          ? {
+              backgroundColor: theme.multiSelectGrid.selectedBackground,
+              borderColor: theme.multiSelectGrid.selectedBorder,
+            }
+          : {
+              backgroundColor: "transparent",
+              borderColor: "transparent",
+            };
         return (
           <div className="p-2" key={`item-${index}`}>
             <div
               className={classes}
+              style={style}
               onClick={() => {
                 // if item is already selected, remove it from the list
                 // otherwise add it to the list

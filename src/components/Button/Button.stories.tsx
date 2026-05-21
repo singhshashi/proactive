@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button } from "./Button";
 import { expect, userEvent, within } from "storybook/test";
+import { ThemeProvider } from "../../theme/ThemeProvider";
 
 const meta = {
   title: "Example/Button",
@@ -75,5 +76,27 @@ export const Default: Story = {
     children: "Details...",
     variant: "default",
     size: "small",
+  },
+};
+
+export const PrimaryWithCustomTheme: Story = {
+  render: (args) => (
+    <ThemeProvider
+      theme={{
+        button: {
+          primary: {
+            gradientFrom: "#14b8a6",
+            gradientTo: "#0f766e",
+            text: "#ecfeff",
+          },
+        },
+      }}
+    >
+      <Button {...args} />
+    </ThemeProvider>
+  ),
+  args: {
+    children: "Done",
+    variant: "primary",
   },
 };
