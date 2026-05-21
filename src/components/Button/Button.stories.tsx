@@ -1,7 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button } from "./Button";
-import { within, userEvent } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
+import { expect, userEvent, within } from "storybook/test";
 
 const meta = {
   title: "Example/Button",
@@ -11,6 +10,9 @@ const meta = {
   },
   argTypes: {
     variant: { control: "radio" },
+  },
+  args: {
+    onClick: (_evt: React.MouseEvent<HTMLButtonElement>) => {},
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof Button>;

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { MultiSelectGrid, MultiSelectGridProps } from "./MultiSelectGrid";
 import sampledata from "./sampledata.json";
 

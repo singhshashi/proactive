@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Wizard, useWizard } from "./Wizard";
 import { WizardStep } from "./WizardStep";
 import React, { useEffect } from "react";

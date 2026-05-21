@@ -1,5 +1,5 @@
-import type { Story, Meta, StoryObj } from "@storybook/react";
-import { SideNav, SideNavProps } from "./SideNav";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { SideNav } from "./SideNav";
 
 const meta = {
   title: "Example/SideNav",

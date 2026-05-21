@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { DataGrid } from "./DataGrid";
 
 const meta = {
@@ -64,7 +64,7 @@ export const SimpleDataGrid: Story = {
       );
     },
     items: sampleItems,
-    itemTemplate: (item: any, index: number) => {
+    itemTemplate: (item: any) => {
       return (
         <div className="flex flex-row  px-2 py-1 justify-between items-center gap-1">
           <div className="flex flex-row items-center justify-start">
@@ -100,7 +100,7 @@ export const DataGridWithFooterAddRemoveButtons: Story = {
       );
     },
     items: sampleItems,
-    itemTemplate: (item: any, index: number) => {
+    itemTemplate: (item: any) => {
       return (
         <div className="flex flex-row  px-2 py-1 justify-between items-center gap-1">
           <div className="flex flex-row items-center justify-start">
