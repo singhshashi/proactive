@@ -1,0 +1,65 @@
+README.md
+  s_171356a35d94d4::t_ba2ecc439fea5a 1,3,5,7-9,11,13-15,17-42,45
+src/components/Button/Button.tsx
+  s_171356a35d94d4::t_5bf9c3b5118cc9 92
+  s_171356a35d94d4::t_fcc802a5287a0f 4
+  s_171356a35d94d4::t_db904a32d7f240 21,39-40,47-56,58,79,86-87,90-91,93-96
+src/components/MultiSelectGrid/MultiSelectGrid.tsx
+  s_171356a35d94d4::t_a568e36b93835d 2
+  s_171356a35d94d4::t_e54e61730744bd 11,23-24,26-34,39
+src/components/Icon/Icon.tsx
+  s_171356a35d94d4::t_7371b50559ff0b 3
+  s_171356a35d94d4::t_96ca07750f8e07 12,15
+src/components/SideNav/SideNav.stories.tsx
+  s_5fef258e2cad57::t_240c034e6960ed 3,34,40,48
+src/theme/useProactiveTheme.ts
+  ai_agent 1-7
+src/components/SideNav/SideNav.tsx
+  s_171356a35d94d4::t_f47d377faf8815 3
+  s_5fef258e2cad57::t_df88cff5fec78d 8
+  s_171356a35d94d4::t_9868cb18056e5e 23,28,31-39,42,45,49
+src/components/Button/Button.stories.tsx
+  s_171356a35d94d4::t_126fd66266d60e 4,81-100
+src/components/Surface/Surface.tsx
+  s_171356a35d94d4::t_70f153703983a2 3
+  s_171356a35d94d4::t_eee95ba7d3eda4 20,35-37
+src/components/DataGrid/DataGrid.tsx
+  s_171356a35d94d4::t_abc7d44216222b 35,42-43,46-49,53,56-61,72,77,84,87,91
+  s_171356a35d94d4::t_cbed3045d5c299 2
+src/components/TextBox/TextBox.tsx
+  s_171356a35d94d4::t_74112c5513577b 2
+  s_171356a35d94d4::t_4907e12503d2d3 21,35-42,47,58
+src/theme/themeContext.ts
+  ai_agent 1-4
+src/index.ts
+  s_171356a35d94d4::t_2989a5d39afcbd 11
+  s_171356a35d94d4::t_8366f280670ead 10,12
+src/theme/ThemeProvider.tsx
+  ai_agent 1-21
+src/theme/theme.ts
+  ai_agent 1-155
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.11",
+  "base_commit_sha": "572dad147a39bafbe4cf80f7ee1ae959c1ce442b",
+  "prompts": {},
+  "sessions": {
+    "s_171356a35d94d4": {
+      "agent_id": {
+        "tool": "github-copilot-cli",
+        "id": "96cd04bb-2f21-493f-b837-5f003f689fec",
+        "model": "auto"
+      },
+      "human_author": null
+    },
+    "s_5fef258e2cad57": {
+      "agent_id": {
+        "tool": "github-copilot-cli",
+        "id": "7569ccd9-f039-4b19-a3c5-1a40021a3e70",
+        "model": "unknown"
+      },
+      "human_author": "Shashi Singh <singh.shashishekhar@gmail.com>"
+    }
+  }
+}
