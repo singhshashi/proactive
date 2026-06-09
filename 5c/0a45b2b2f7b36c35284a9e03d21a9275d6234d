@@ -1,0 +1,19 @@
+AGENTS.md
+  s_dfcdbfc433f6b0::t_db8d3df9b6e419 42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "5c0a45b2b2f7b36c35284a9e03d21a9275d6234d",
+  "prompts": {},
+  "sessions": {
+    "s_dfcdbfc433f6b0": {
+      "agent_id": {
+        "tool": "github-copilot-cli",
+        "id": "994b90a7-030f-4497-966e-acf30ae80fa7",
+        "model": "claude-haiku-4.5"
+      },
+      "human_author": "Shashi Singh <singh.shashishekhar@gmail.com>"
+    }
+  }
+}
