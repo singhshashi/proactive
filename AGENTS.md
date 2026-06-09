@@ -39,7 +39,7 @@ pnpm test
 
 **Styling:** Tailwind CSS utility classes applied directly in component TSX. No CSS modules. `clsx` is used for conditional class composition.
 
-**Icons:** Uses `react-bootstrap-icons`. The `Icon` component (`src/components/Icon/Icon.tsx`) wraps the icon library — `IconName` is derived from the library's exported keys. Do not use `@heroicons/react` (it remains a peer dependency but the import was switched).
+**Icons:** Uses `lucide-react`. The `Icon` component (`src/components/Icon/Icon.tsx`) wraps the icon library — `IconName` is derived from the library's exported keys.
 
 **Wizard component:** Uses React Context (`WizardContext`) to allow child steps to signal readiness. Steps call `useWizard()` → `setStepReady(stepIndex, boolean)` to enable/disable the Next button. The `Wizard` renders one child at a time by index and exposes `data-stepindex` on the content wrapper for testing.
 
